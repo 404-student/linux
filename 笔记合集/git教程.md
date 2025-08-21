@@ -71,3 +71,16 @@ git config --global user.email 你的邮箱
 # 三、远程存档
 
 上述操作只是把自己的文件存在了本地，怎么把文件上传到github或gitee等远程服务器中呢？由于我不用gitee，我相信看到这篇文章的人也不用gitee，我就直接介绍github的方法吧。
+
+首先，对一个已经提交给本地仓库的文件夹，在源代码管理中可以选择“上传 branch”，点击后系统会提示登录github账号，这时不要急着点确定，先使用**默认浏览器**登录github账号，再点击确定。接下来就是把github账号授权给vscode。
+
+授权完毕后，vscode上方会弹出选项，选择把文件夹以公开（public）方式上传还是以私有（private）方式上传。选择完之后就开始上传了。
+
+我上传的的还是挺顺利，如果不顺利的话，需要给git设置一下代理。只需要在搜索引擎里搜索`git set proxy`，再找到相应的设置命令即可，比如stackoverflow的命令是：
+
+```
+git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:8080
+git config --global https.proxy https://proxyuser:proxypwd@proxy.server.com:8080
+```
+
+这里只需把地址换成自己的地址（127.0.0.1），把8080换成代理端口，一般使用clash的默认端口是7890（在General-Port能找到）。
